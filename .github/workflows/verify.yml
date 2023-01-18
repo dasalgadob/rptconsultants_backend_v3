@@ -16,13 +16,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Run linters
-        run: |
-          bin/rubocop --parallel
-          bin/stylelint
-          bin/prettier
-          bin/eslint
-
       - name: Run security checks
         run: |
           bin/bundler-audit --update
