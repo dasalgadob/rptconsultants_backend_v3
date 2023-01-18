@@ -11,9 +11,9 @@ jobs:
       postgres:
         image: postgres:12.7
         env:
-          POSTGRES_USER: myapp
-          POSTGRES_DB: myapp_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_USER: costek
+          POSTGRES_DB: rptconsultants_backend_v2_test
+          POSTGRES_PASSWORD: costek
         ports: ["5434:5434"]
 
     steps:
