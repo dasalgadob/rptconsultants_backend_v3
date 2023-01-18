@@ -14,7 +14,7 @@ jobs:
           POSTGRES_USER: costek
           POSTGRES_DB: rptconsultants_backend_v2_test
           POSTGRES_PASSWORD: costek
-        ports: ["5434:5434"]
+        ports: ["5432:5432"]
 
     steps:
       - name: Checkout code
