@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :reference_tables do
+    resources :position_types
     resources :degrees
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
