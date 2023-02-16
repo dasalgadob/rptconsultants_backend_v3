@@ -17,11 +17,11 @@ RSpec.describe "/reference_tables/position_types", type: :request do
   # ReferenceTables::PositionType. As you add validations to ReferenceTables::PositionType, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:reference_tables_position_type)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:reference_tables_position_type_invalid)
   }
 
   # This should return the minimal set of values that should be in the headers
@@ -85,7 +85,7 @@ RSpec.describe "/reference_tables/position_types", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:reference_tables_position_type)
       }
 
       it "updates the requested reference_tables_position_type" do
@@ -93,7 +93,6 @@ RSpec.describe "/reference_tables/position_types", type: :request do
         patch reference_tables_position_type_url(position_type),
               params: { reference_tables_position_type: new_attributes }, headers: valid_headers, as: :json
         position_type.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the reference_tables_position_type" do
