@@ -17,11 +17,11 @@ RSpec.describe "/reference_tables/degrees", type: :request do
   # ReferenceTables::Degree. As you add validations to ReferenceTables::Degree, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:random_degree)
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    attributes_for(:random_degree_invalid)
   }
 
   # This should return the minimal set of values that should be in the headers
@@ -85,7 +85,7 @@ RSpec.describe "/reference_tables/degrees", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:random_degree)
       }
 
       it "updates the requested reference_tables_degree" do
@@ -93,7 +93,6 @@ RSpec.describe "/reference_tables/degrees", type: :request do
         patch reference_tables_degree_url(degree),
               params: { reference_tables_degree: new_attributes }, headers: valid_headers, as: :json
         degree.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the reference_tables_degree" do
