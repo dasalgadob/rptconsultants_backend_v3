@@ -1,0 +1,26 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# pulled from repo
+name: "Rubocop"
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "develop" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v1
+
+    - name: Rubocop checks
+      uses: luizfonseca/github-actions-rubocop@1.5.6
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
