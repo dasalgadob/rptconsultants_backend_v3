@@ -1,4 +1,4 @@
-name: CI - To check on linters
+name: CI - Linter Rubocop
 on:
   push:
     branches: [ develop ]
