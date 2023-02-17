@@ -1,5 +1,5 @@
 class ReferenceTables::RoleLevelsController < ApplicationController
-  before_action :set_reference_tables_role_level, only: %i[ show update destroy ]
+  before_action :set_reference_tables_role_level, only: %i[show update destroy]
 
   # GET /reference_tables/role_levels
   def index
@@ -39,13 +39,15 @@ class ReferenceTables::RoleLevelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reference_tables_role_level
-      @reference_tables_role_level = ReferenceTables::RoleLevel.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reference_tables_role_level_params
-      params.require(:reference_tables_role_level).permit(:name, :reference_tables_degree_id, :reference_tables_position_type_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reference_tables_role_level
+    @reference_tables_role_level = ReferenceTables::RoleLevel.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def reference_tables_role_level_params
+    params.require(:reference_tables_role_level).permit(:name, :reference_tables_degree_id,
+                                                        :reference_tables_position_type_id)
+  end
 end

@@ -10,7 +10,6 @@ RSpec.describe ReferenceTables::PositionTypesController, type: :routing do
       expect(get: "/reference_tables/position_types/1").to route_to("reference_tables/position_types#show", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/reference_tables/position_types").to route_to("reference_tables/position_types#create")
     end
@@ -24,7 +23,8 @@ RSpec.describe ReferenceTables::PositionTypesController, type: :routing do
     end
 
     it "routes to #destroy" do
-      expect(delete: "/reference_tables/position_types/1").to route_to("reference_tables/position_types#destroy", id: "1")
+      expect(delete: "/reference_tables/position_types/1").to route_to("reference_tables/position_types#destroy",
+                                                                       id: "1")
     end
   end
 end

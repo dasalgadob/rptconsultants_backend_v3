@@ -16,23 +16,24 @@ RSpec.describe "/reference_tables/role_levels", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # ReferenceTables::RoleLevel. As you add validations to ReferenceTables::RoleLevel, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     d = create(:random_degree)
     pt = create(:reference_tables_position_type)
-    attributes_for(:reference_tables_role_level, reference_tables_degree_id: d.id, reference_tables_position_type_id: pt.id)
-  }
+    attributes_for(:reference_tables_role_level, reference_tables_degree_id: d.id,
+                                                 reference_tables_position_type_id: pt.id)
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     attributes_for(:reference_tables_role_level_invalid)
-  }
+  end
 
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
   # ReferenceTables::RoleLevelsController, or in your router and rack
   # middleware. Be sure to keep this updated too.
-  let(:valid_headers) {
+  let(:valid_headers) do
     {}
-  }
+  end
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -86,9 +87,9 @@ RSpec.describe "/reference_tables/role_levels", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) {
+      let(:new_attributes) do
         attributes_for(:reference_tables_role_level)
-      }
+      end
 
       it "updates the requested reference_tables_role_level" do
         role_level = ReferenceTables::RoleLevel.create! valid_attributes

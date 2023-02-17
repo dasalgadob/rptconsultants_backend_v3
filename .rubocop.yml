@@ -1,1 +1,18 @@
 require: rubocop-rails
+Style/EndOfLine:
+  EnforcedStyle: lf
+
+StringLiterals:
+  Enabled: false
+
+BlockComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining

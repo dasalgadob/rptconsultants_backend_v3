@@ -1,5 +1,5 @@
 class ReferenceTables::PositionTypesController < ApplicationController
-  before_action :set_reference_tables_position_type, only: %i[ show update destroy ]
+  before_action :set_reference_tables_position_type, only: %i[show update destroy]
 
   # GET /reference_tables/position_types
   def index
@@ -39,13 +39,14 @@ class ReferenceTables::PositionTypesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reference_tables_position_type
-      @reference_tables_position_type = ReferenceTables::PositionType.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reference_tables_position_type_params
-      params.require(:reference_tables_position_type).permit(:name, :minimum_degree, :maximum_degree)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reference_tables_position_type
+    @reference_tables_position_type = ReferenceTables::PositionType.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def reference_tables_position_type_params
+    params.require(:reference_tables_position_type).permit(:name, :minimum_degree, :maximum_degree)
+  end
 end

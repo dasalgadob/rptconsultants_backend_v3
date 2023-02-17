@@ -16,21 +16,21 @@ RSpec.describe "/reference_tables/degrees", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # ReferenceTables::Degree. As you add validations to ReferenceTables::Degree, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     attributes_for(:random_degree)
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     attributes_for(:random_degree_invalid)
-  }
+  end
 
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
   # ReferenceTables::DegreesController, or in your router and rack
   # middleware. Be sure to keep this updated too.
-  let(:valid_headers) {
+  let(:valid_headers) do
     {}
-  }
+  end
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -84,9 +84,9 @@ RSpec.describe "/reference_tables/degrees", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) {
+      let(:new_attributes) do
         attributes_for(:random_degree)
-      }
+      end
 
       it "updates the requested reference_tables_degree" do
         degree = ReferenceTables::Degree.create! valid_attributes

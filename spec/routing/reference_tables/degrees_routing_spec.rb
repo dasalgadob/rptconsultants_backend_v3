@@ -10,7 +10,6 @@ RSpec.describe ReferenceTables::DegreesController, type: :routing do
       expect(get: "/reference_tables/degrees/1").to route_to("reference_tables/degrees#show", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/reference_tables/degrees").to route_to("reference_tables/degrees#create")
     end

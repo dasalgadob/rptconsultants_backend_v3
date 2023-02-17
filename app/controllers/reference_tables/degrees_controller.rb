@@ -1,5 +1,5 @@
 class ReferenceTables::DegreesController < ApplicationController
-  before_action :set_reference_tables_degree, only: %i[ show update destroy ]
+  before_action :set_reference_tables_degree, only: %i[show update destroy]
 
   # GET /reference_tables/degrees
   def index
@@ -39,13 +39,14 @@ class ReferenceTables::DegreesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reference_tables_degree
-      @reference_tables_degree = ReferenceTables::Degree.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reference_tables_degree_params
-      params.require(:reference_tables_degree).permit(:number, :minimum, :medium, :maximum, :hay_degrees, :ggs_degrees)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reference_tables_degree
+    @reference_tables_degree = ReferenceTables::Degree.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def reference_tables_degree_params
+    params.require(:reference_tables_degree).permit(:number, :minimum, :medium, :maximum, :hay_degrees, :ggs_degrees)
+  end
 end

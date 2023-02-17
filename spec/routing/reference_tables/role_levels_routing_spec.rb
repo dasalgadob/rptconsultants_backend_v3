@@ -10,7 +10,6 @@ RSpec.describe ReferenceTables::RoleLevelsController, type: :routing do
       expect(get: "/reference_tables/role_levels/1").to route_to("reference_tables/role_levels#show", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/reference_tables/role_levels").to route_to("reference_tables/role_levels#create")
     end
