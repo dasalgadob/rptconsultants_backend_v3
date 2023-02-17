@@ -1,6 +1,10 @@
-require: rubocop-rails
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
 Style/EndOfLine:
-  EnforcedStyle: lf
+  Enabled: false
 
 StringLiterals:
   Enabled: false
@@ -16,3 +20,15 @@ Style/ClassAndModuleChildren:
 
 Style/BlockDelimiters:
   EnforcedStyle: braces_for_chaining
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GlobalStdStream:
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Enabled: false
