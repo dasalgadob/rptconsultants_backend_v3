@@ -1,26 +1,22 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# pulled from repo
-name: "Rubocop"
-
+name: CI - To check on linters
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ develop ]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "develop" ]
+    branches: [ develop]
+
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-n-test:
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+
     steps:
-
-    - uses: actions/checkout@v1
-
-    - name: Rubocop checks
-      uses: luizfonseca/github-actions-rubocop@1.5.6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: RuboCop
+        run: bundle exec rubocop
