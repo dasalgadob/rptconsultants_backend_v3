@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-n-test:
+  linter:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
