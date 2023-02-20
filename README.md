@@ -16,9 +16,14 @@ rails db:setup
 
 * Database initialization
 
+
+* linter 
+rubocop
+rubocop -a
+
 * How to run the test suite
-docker-compose run web bundle exec rspec
-docker-compose run web bundle exec rspec spec/models
+bundle exec rspec
+bundle exec rspec spec/models
 bundle exec rspec spec/controllers/accounts_controller_spec.rb  
 bundle exec rspec spec/controllers/accounts_controller_spec.rb:8
 
