@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_17_041206) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_20_233144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_041206) do
     t.bigint "reference_tables_position_type_id", null: false
     t.index ["reference_tables_degree_id"], name: "index_role_levels_on_degree_id"
     t.index ["reference_tables_position_type_id"], name: "index_role_levels_on_position_type_id"
+  end
+
+  create_table "reference_tables_sectors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "reference_tables_role_levels", "reference_tables_degrees"
