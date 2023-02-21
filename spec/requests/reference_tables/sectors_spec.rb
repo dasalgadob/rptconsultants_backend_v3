@@ -17,11 +17,11 @@ RSpec.describe "/reference_tables/sectors", type: :request do
   # ReferenceTables::Sector. As you add validations to ReferenceTables::Sector, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip("Add a hash of attributes valid for your model")
+    attributes_for(:reference_tables_sector)
   end
 
   let(:invalid_attributes) do
-    skip("Add a hash of attributes invalid for your model")
+  attributes_for(:reference_tables_sector_invalid)
   end
 
   # This should return the minimal set of values that should be in the headers
@@ -85,7 +85,7 @@ RSpec.describe "/reference_tables/sectors", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) do
-        skip("Add a hash of attributes valid for your model")
+        attributes_for(:reference_tables_sector)
       end
 
       it "updates the requested reference_tables_sector" do
@@ -93,7 +93,6 @@ RSpec.describe "/reference_tables/sectors", type: :request do
         patch reference_tables_sector_url(sector),
               params: { reference_tables_sector: new_attributes }, headers: valid_headers, as: :json
         sector.reload
-        skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the reference_tables_sector" do
