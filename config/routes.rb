@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   namespace :reference_tables do
+    resources :subsectors
     resources :sectors
     resources :role_levels
     resources :position_types

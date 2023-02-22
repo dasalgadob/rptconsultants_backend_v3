@@ -48,6 +48,7 @@ Rails/NotNullColumn:
   Exclude:
     - 'db/migrate/20230217040549_add_degrees_id_to_role_level.rb'
     - 'db/migrate/20230217041206_add_position_types_id_to_role_level.rb'
+    - 'db/**/*'
 
 # Offense count: 2
 # Configuration parameters: Include.

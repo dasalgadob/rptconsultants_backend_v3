@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_20_233144) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_174020) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_233144) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reference_tables_subsectors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "reference_tables_sector_id", null: false
+    t.index ["reference_tables_sector_id"], name: "index_subsector_on_sector_id"
+  end
+
   add_foreign_key "reference_tables_role_levels", "reference_tables_degrees"
   add_foreign_key "reference_tables_role_levels", "reference_tables_position_types"
+  add_foreign_key "reference_tables_subsectors", "reference_tables_sectors"
 end
